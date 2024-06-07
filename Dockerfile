@@ -1,18 +1,19 @@
 # Use the official Rocker Tidyverse image as the base image
 FROM rocker/tidyverse:4.4
 
-COPY ./workbench /opt/workbench
 COPY r-package.list /tmp
 COPY sources.list /etc/apt/
 
 # Install system dependencies and R packages
 RUN apt-get update && \
-    apt-get install -y libgsl-dev libglpk-dev libglu1-mesa && \
+    apt-get install -y libgsl-dev libglpk-dev && \
     Rscript -e "install.packages(readLines('/tmp/r-package.list'), Ncpus = 8)"
 
 # Install Python packages
-RUN apt-get install -y python3-pip && \
-    pip3 install pybids
+RUN apt-get install -y python3-pip && pip3 install pybids
+
+# Used for surface-based analysis
+RUN apt-get install -y connectome-workbench
 
 # Clean up
 RUN apt-get clean && \
