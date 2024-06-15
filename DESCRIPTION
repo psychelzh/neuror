@@ -1,0 +1,21 @@
+Package: neuror
+Title: Docker R dependencies for daily neuroimaging analysis
+Version: 0.0.0.9000
+Authors@R:
+    person("Liang", "Zhang", , "psychelzh@outlook.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-9041-1150"))
+Description: Docker R dependencies for daily neuroimaging analysis
+License: GPL (>= 3)
+Imports: 
+    ciftiTools,
+    cpmr,
+    ggpmisc,
+    ggpubr,
+    GPArotation,
+    igraph,
+    psych,
+    reticulate,
+    showtext
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
