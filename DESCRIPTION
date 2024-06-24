@@ -6,9 +6,10 @@ Authors@R:
            comment = c(ORCID = "0000-0001-9041-1150"))
 Description: Docker R dependencies for daily neuroimaging analysis
 License: GPL (>= 3)
-Imports: 
+Imports:
     ciftiTools,
     cpmr,
+    crew,
     ggpmisc,
     ggpubr,
     GPArotation,
