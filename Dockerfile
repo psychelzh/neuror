@@ -17,6 +17,10 @@ RUN apt-get install -y python3-pip && pip3 install pybids
 # Used for surface-based analysis
 RUN apt-get install -y connectome-workbench
 
+# add chinese fonts
+RUN apt-get install -y fontconfig fonts-wqy-zenhei
+RUN fc-cache -fv
+
 # Clean up
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
